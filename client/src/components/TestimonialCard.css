@@ -1,0 +1,44 @@
+/* TestimonialCard.css */
+
+.testimonial-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.testimonial-card .client-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.testimonial-card .testimonial-quote {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.testimonial-card .testimonial-quote p {
+    margin: 0;
+}
+
+
+.testimonial-card .testimonial-author {
+    text-align: right;
+}
+
+.testimonial-card .author-name {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.testimonial-card .author-company {
+    color: #777;
+    font-size: 0.9em;
+}

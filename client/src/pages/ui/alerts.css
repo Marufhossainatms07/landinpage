@@ -1,0 +1,60 @@
+/* alerts.css */
+.alert-container {
+    position: fixed; /* Or absolute, depending on your layout */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the alert */
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Ensure it's on top of other elements */
+  }
+  
+  .alert-message {
+    margin-bottom: 10px; /* Space between message and buttons */
+  }
+  
+  .alert-button {
+    padding: 8px 15px;
+    background-color: #007bff; /* Example color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px; /* Space between buttons */
+  }
+  
+  .alert-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
+  /* Optional: Styles for different alert types */
+  .alert-success {
+    border-color: #4CAF50; /* Green border */
+  }
+  
+  .alert-danger {
+    border-color: #f44336; /* Red border */
+  }
+  
+  /* LandingPage.css */
+  /* ... other styles from LandingPage.css */
+  
+  /* Add styles for elements that might be covered by the alert */
+  .landing-page-container {
+    /* ... other styles */
+    position: relative; /* Needed if alert is position: fixed */
+  }
+  
+  /* Styles to blur the background behind the alert */
+  .alert-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+      z-index: 999; /* Below the alert but above other content */
+    }

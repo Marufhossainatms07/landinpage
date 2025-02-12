@@ -1,0 +1,88 @@
+/* frontend/src/pages/OrderSuccessPage.css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transitions */
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    position: relative; /* For close button positioning */
+    transform: translateY(-20px); /* Start slightly above center */
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-content.show {
+    transform: translateY(0); /* Move to center */
+    opacity: 1;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #888;
+}
+
+
+.order-success-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.go-home-button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Example color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Add some space above the button */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.go-home-button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+    transform: scale(1.15);
+}
+
+.order-success-container h1 {
+    color: #28a745; /* Green color for success heading */
+    margin-bottom: 1rem;
+}
+
+.order-success-container p {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.order-success-container strong {
+    font-weight: bold;
+}

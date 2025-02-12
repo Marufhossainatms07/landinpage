@@ -1,0 +1,49 @@
+/* frontend/src/components/Notification.css */
+.notification {
+    position: fixed; /* Fixed position at the bottom */
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 15px 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top of other content */
+}
+
+.notification.success {
+    background-color: #e6f7e8;
+    color: #37a351;
+    border-left: 4px solid #37a351; /* Green border for success */
+}
+
+.notification.error {
+    background-color: #fcebeb;
+    color: #e74c3c;
+    border-left: 4px solid #e74c3c; /* Red border for error */
+}
+
+.notification p {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.notification-close-button {
+    background: none;
+    border: none;
+    color: #777;
+    font-size: 1.5em;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    padding: 0 5px;
+    margin-left: 15px;
+}
+
+.notification-close-button:hover {
+    opacity: 1;
+}

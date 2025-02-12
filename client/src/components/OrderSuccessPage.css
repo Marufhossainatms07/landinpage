@@ -1,0 +1,109 @@
+/* frontend/src/pages/OrderSuccessPage.css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transitions */
+}
+
+.modal-overlay .modal-content {
+    display: flex;
+    flex-direction: column; /* Or row, depending on your layout */
+    align-items: center;    /* Center horizontally */
+    justify-content: center; /* Center vertically (if needed) */
+}
+
+.modal-overlay .modal-content button {
+    font-size: larger;
+    font-weight: 550;
+    padding: 10px 20px;
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;    position: absolute;
+    top: 80%; 
+    left: 50%;
+    transform: translateX(-50%); 
+}
+
+.modal-overlay .modal-content button:hover {
+    background-color: #0056b3; /* Darker background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow on hover */
+}
+
+
+
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    position: relative; /* For close button positioning */
+    transform: translateY(-20px); /* Start slightly above center */
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-content.show {
+    transform: translateY(0); /* Move to center */
+    opacity: 1;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 40px;
+    cursor: pointer;
+    color: #888;
+    transition: transform 0.2s ease, color 0.2s ease; /* Smooth transitions */
+}
+
+.modal-close:hover {
+    transform: scale(1.3); /* Slightly less scaling */
+    color: #555; /* Darker color on hover */
+}
+
+.order-success-container {
+    max-width: 30rem;
+    margin: 2rem auto;
+    padding: 20px;
+    /* border: 1px solid #ddd; */
+    border-radius: 8px;
+    background-color: white;
+    text-align: center;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+
+.order-success-container h1 {
+    color: #28a745;
+    margin-bottom: 1rem;
+    text-decoration: underline; /* Add underline */
+    text-underline-position: below; /* Adjust position if needed */
+}
+
+.order-success-container p {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.order-success-container strong {
+    font-weight: bold;
+}

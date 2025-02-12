@@ -1,0 +1,170 @@
+/* frontend/src/pages/AdminPanel.css - Phase 27 - Enhanced Styling */
+
+/* --- Color Palette (Adjust these to match your landing page!) --- */
+:root {
+  --primary-color: #007bff;         /* Example Primary Blue */
+  --secondary-color: #6c757d;       /* Example Secondary Gray */
+  --accent-color: #ffc107;          /* Example Accent Yellow (or use your brand accent) */
+  --background-color: #f8f9fa;      /* Light Gray Background */
+  --sidebar-background: #343a40;    /* Dark Gray Sidebar Background */
+  --sidebar-text-color: #ffffff;     /* White Sidebar Text */
+  --sidebar-active-background: #495057; /* Lighter Sidebar Active Background */
+  --sidebar-active-text-color: var(--accent-color); /* Accent color for active sidebar link */
+  --section-background: #ffffff;     /* White Section Background */
+  --text-color-dark: #333333;       /* Dark Text Color */
+  --text-color-light: #666666;      /* Lighter Text Color */
+  --border-color: #dddddd;         /* Light Gray Border Color */
+  --box-shadow-color: rgba(0, 0, 0, 0.05); /* Subtle shadow color */
+}
+
+
+.admin-panel-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--background-color); /* Use background color variable */
+  font-family: 'Arial', sans-serif; /* Example font - adjust as needed */
+  color: var(--text-color-dark); /* Use dark text color variable */
+}
+
+admin-panel-container h1 {
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  margin: 0;
+  padding: 20px 0;
+}
+
+.admin-navigation {
+  width: 220px; /* Slightly wider sidebar */
+  background-color: var(--sidebar-background); /* Use sidebar background color variable */
+  color: var(--sidebar-text-color); /* Use sidebar text color variable */
+  padding: 20px 0; /* More vertical padding */
+}
+
+.admin-navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-navigation li {
+  padding: 10px 25px; /* Adjusted padding */
+  margin-bottom: 5px; /* Spacing between links */
+}
+
+.admin-navigation a {
+  display: block;
+  color: var(--sidebar-text-color); /* Sidebar text color */
+  text-decoration: none;
+  padding: 10px 15px; /* Padding within links */
+  border-radius: 0.3rem; /* Slightly rounded corners for links */
+  transition: background-color 0.2s ease, color 0.2s ease; /* Smooth hover effect */
+}
+
+.admin-navigation a:hover,
+.admin-navigation a.active {
+  background-color: var(--sidebar-active-background); /* Active background color */
+  color: var(--sidebar-active-text-color); /* Active text color */
+  font-weight: 500; /* Slightly bolder active link */
+}
+
+.admin-content {
+  flex-grow: 1;
+  padding: 25px; /* Increased content padding */
+}
+
+.admin-section {
+  background-color: var(--section-background); /* Section background color */
+  padding: 25px; /* Increased section padding */
+  margin-bottom: 25px; /* Increased bottom margin */
+  border-radius: 0.5rem; /* More rounded section corners */
+  box-shadow: 0 0 12px var(--box-shadow-color); /* Slightly stronger shadow */
+  border: 1px solid var(--border-color); /* Add a subtle border */
+}
+
+.admin-section h2 {
+  margin-top: 0;
+  margin-bottom: 20px; /* Increased bottom margin for heading */
+  color: var(--text-color-dark); /* Dark text color for heading */
+  font-size: 1.75rem; /* Slightly larger heading font size */
+  font-weight: 600; /* Bolder heading font weight */
+  border-bottom: 2px solid var(--border-color); /* Add a subtle bottom border to headings */
+  padding-bottom: 0.5rem; /* Padding below heading border */
+}
+
+.admin-section p {
+  color: var(--text-color-light); /* Lighter text color for paragraphs */
+  line-height: 1.7;
+}
+
+/* AdminPanel.css - Phase 28 - Order Table Styles */
+
+/* ... (previous AdminPanel.css styles) ... */
+
+.orders-section h2 {
+  margin-bottom: 25px; /* More space below Orders heading */
+}
+
+.orders-table-container {
+  overflow-x: auto; /* Enable horizontal scrolling for table if needed */
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  border-spacing: 0; /* Remove spacing between cells for a cleaner look */
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color); /* Bottom border for rows */
+}
+
+.orders-table th {
+  background-color: #f0f0f0; /* Light background for header row */
+  font-weight: 600;
+  color: var(--text-color-dark);
+}
+
+.orders-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Slightly different background for even rows */
+}
+
+.orders-table tbody tr:hover {
+  background-color: #f2f2f2; /* Hover background */
+}
+
+.orders-table td:last-child {
+  text-align: center; /* Center align "Actions" column content */
+}
+
+.orders-table .button-primary {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: var(--primary-color); /* Use primary color for button */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.orders-table .button-primary:hover {
+  background-color: darken(var(--primary-color), 10%); /* Darken on hover */
+}
+
+
+
+/* Responsive table (optional - if needed for smaller screens) */
+/* You might need to adjust breakpoints and styles based on your design */
+@media (max-width: 768px) {
+  .orders-table {
+      font-size: 0.9rem;
+  }
+  .orders-table th,
+  .orders-table td {
+      padding: 8px 10px;
+  }
+}

@@ -1,0 +1,190 @@
+/* MethodCheckoutPage.css - Phase 21 - Transaction ID Input Styles */
+
+.method-checkout-container {
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 700px;
+    margin: 2rem auto;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+.method-checkout-container h1 {
+    color: #4c6a8f;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.checkout-summary, .payment-instructions, .transaction-id-input {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    border: 1px solid #e0e8f0;
+    border-radius: 0.75rem;
+    background-color: #f9faff;
+}
+
+.checkout-summary h2, .payment-instructions h2, .transaction-id-input h2 {
+    color: #4a6a8a;
+    border-bottom: 2px solid #e0e8f0;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.checkout-summary .summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed #e0e8f0;
+}
+
+.checkout-summary .summary-item:last-child {
+    border-bottom: none;
+}
+
+.checkout-summary .summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    padding-top: 1rem;
+}
+
+.payment-instructions .instruction-box p {
+    line-height: 1.7;
+    margin-bottom: 0.8rem;
+}
+
+.payment-instructions .instruction-box p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Transaction ID Input Styles */
+.transaction-id-input .input-box {
+    margin-top: 1rem;
+}
+
+.transaction-id-input input[type="text"] {
+    width: 100%;
+    padding: 0.9rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ced4da;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    box-sizing: border-box; /* Important for width: 100% to include padding and border */
+}
+
+.transaction-id-input input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.transaction-id-input .error-message {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+}
+
+
+.confirm-button-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.confirm-payment-button {
+    background-color: #28a745; /* Green color for confirm button */
+    color: white;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+
+.confirm-payment-button:hover {
+    background-color: #218838;
+    transform: scale(1.03);
+}
+
+/* MethodCheckoutPage.css - Phase 24 - Pending Status Styles */
+
+/* ... (All previous CSS styles from Phase 23 - Keep them) ... */
+
+
+/* Pending Payment Message Styles */
+.pending-message {
+    background-color: #fff8e0; /* Light yellow/orange background */
+    color: #c08a00; /* Darker yellow/orange text */
+    border: 1px solid #ffe082; /* Yellow/orange border */
+}
+
+.pending-icon {
+    color: #c08a00; /* Darker yellow/orange icon color */
+}
+
+.pending-detail {
+    font-weight: normal; /* Make detail text normal weight */
+    margin-top: 0.5rem; /* Add space above detail text */
+    font-size: 0.95rem; /* Slightly smaller detail text */
+}
+
+
+/* ... (Responsive adjustments - Keep them from Phase 23) ... */
+
+
+/* Responsive adjustments - can be further refined */
+@media (max-width: 768px) {
+    .method-checkout-container {
+        padding: 2rem;
+        width: 95%;
+    }
+
+    .checkout-summary, .payment-instructions, .transaction-id-input {
+        padding: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .method-checkout-container h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .checkout-summary h2, .payment-instructions h2, .transaction-id-input h2 {
+        font-size: 1.4rem;
+        padding-bottom: 0.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .confirm-payment-button {
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .method-checkout-container {
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+    }
+
+    .checkout-summary, .payment-instructions, .transaction-id-input {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .method-checkout-container h1 {
+        font-size: 1.6rem;
+    }
+
+    .checkout-summary h2, .payment-instructions h2, .transaction-id-input h2 {
+        font-size: 1.3rem;
+    }
+}
+

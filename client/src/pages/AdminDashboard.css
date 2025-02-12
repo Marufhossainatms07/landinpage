@@ -1,0 +1,55 @@
+/* frontend/src/pages/DashboardPage.css */
+.dashboard-page-container {
+    padding: 20px;
+}
+
+.dashboard-section {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px; /* Spacing between dashboard sections */
+}
+
+.dashboard-section h2 {
+    margin-top: 0; /* Remove top margin from section headings */
+}
+
+/* frontend/src/pages/DashboardPage.css */
+
+/* ... existing styles ... */
+
+.overview-summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.summary-card {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.summary-card h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.summary-card p {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #007bff; /* Example primary color */
+    margin: 10px 0 0;
+}
+
+/* You can add specific styles for each card type if needed, e.g., 
+.orders-card { background-color: #e0f7fa; } 
+.sales-card { background-color: #f0f4c3; } 
+... 
+*/
+

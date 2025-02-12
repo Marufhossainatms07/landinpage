@@ -1,0 +1,161 @@
+:root {
+  /* Color Scheme Variables (Adjust to your brand colors) */
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --accent-color: #ffc107;
+  --background-color: #f8f9fa;
+  --background-light: #fefefe;
+  --background-lighter: #f9f9f9;
+  --text-color-dark: #333333;
+  --text-color-light: #666666;
+  --border-color: #dddddd;
+  --border-light-grey: #ddd;
+  --lighter-grey: #eee;
+  --neutral-dark-grey: #333;
+
+  /* Typography Variables - Using rem units for scalability */
+  --font-family-headings: 'Poppins', sans-serif;
+  --font-family-body: 'Nunito', sans-serif;
+  --font-weight-headings: 600;
+  --font-weight-body: 400;
+  --base-font-size: 16px; /* Base font size in pixels */
+
+  /* Spacing and Size Variables - rem units for scalability */
+  --border-radius-small: 0.25rem;
+  --border-radius-medium: 0.5rem;
+  --border-radius-large: 0.75rem;
+  --padding-small: 0.625rem;
+  --padding-medium: 0.9375rem;
+  --padding-large: 1.25rem;
+  --margin-small: 0.625rem;
+  --margin-medium: 0.9375rem;
+  --margin-large: 1.25rem;
+
+  font-size: var(--base-font-size); /* Set base font size on root */
+  box-sizing: border-box; /* Inherit box-sizing to all elements */
+}
+
+*, *::before, *::after { /* Apply border-box to all elements */
+  box-sizing: inherit;
+}
+
+html {
+  /* Ensure full viewport height and smooth scrolling */
+  height: 100%;
+  scroll-behavior: smooth; /* Optional: Smooth scrolling for anchor links */
+}
+
+
+body {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-body);
+  color: var(--text-color-dark);
+  background-color: var(--background-color);
+  line-height: 1.6;
+  min-height: 100vh; /* Full viewport height */
+  width: 100%;      /* Full width */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  display: flex;      /* Flexbox for layout */
+  flex-direction: column; /* Stack content vertically */
+  align-items: stretch;  /* Stretch items to fill width */
+}
+
+main { /* Add main element for main content */
+  flex: 1; /* Allow main to grow and take available space */
+  width: 100%;
+  max-width: 1920px; /* Optional: Set a maximum width for your main content */
+  margin: 0 auto;    /* Center main content on larger screens */
+  padding: 0 var(--padding-medium); /* Horizontal padding for main content */
+}
+
+
+/* Headings - Using rem for font-size and consistent font-family */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-headings);
+  font-weight: var(--font-weight-headings);
+  color: var(--neutral-dark-grey);
+  line-height: 1.2;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+/* Links */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--primary-color) 80%, black); /* Darken on hover */
+  text-decoration: underline;
+}
+
+/* Buttons - Example button styling */
+button {
+  padding: var(--padding-medium) var(--padding-large);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--border-radius-medium);
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+button:hover {
+  background-color: color-mix(in srgb, var(--primary-color) 80%, black); /* Darken hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* --- Media Queries for Global Styles --- */
+
+/* Tablet and smaller screens */
+@media (max-width: 768px) {
+  :root {
+      --base-font-size: 15px; /* Slightly smaller base font size */
+      --padding-medium: 0.75rem;
+      --padding-large: 1rem;
+      --margin-medium: 0.75rem;
+      --margin-large: 1rem;
+  }
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.8rem; }
+  h3 { font-size: 1.6rem; }
+  main {
+      padding: 0 var(--padding-small); /* Less horizontal padding on tablet */
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 500px) {
+  :root {
+      --base-font-size: 14px; /* Even smaller base font size */
+      --padding-medium: 0.5rem;
+      --padding-large: 0.75rem;
+      --margin-medium: 0.5rem;
+      --margin-large: 0.75rem;
+  }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.7rem; }
+  h3 { font-size: 1.5rem; }
+  main {
+      padding: 0 var(--padding-small); /* Even less horizontal padding on mobile */
+  }
+}

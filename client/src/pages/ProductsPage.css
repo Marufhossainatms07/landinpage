@@ -1,0 +1,358 @@
+/* frontend/src/pages/ProductsPage.css */
+.products-page-container {
+    padding: 2rem;
+    overflow-x: auto;
+}
+
+.products-section {
+    background-color: var(--section-background); /* Use admin panel section background color */
+    padding: 2rem;
+    border: 1px solid var(--border-color); /* Use admin panel border color */
+    border-radius: 0.5rem;
+    box-shadow: 0 0 12px var(--box-shadow-color); /* Use admin panel shadow color */
+}
+
+.products-section h2 {
+    color: var(--text-color-dark);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.products-section p {
+    color: var(--text-color-light);
+    line-height: 1.6;
+}
+
+/* ProductsPage.css - Phase 33 - Product Table Styles */
+
+/* ... (previous ProductsPage.css styles) ... */
+
+.products-section h2 {
+    margin-bottom: 25px; /* More space below Products heading */
+}
+
+.products-table-container {
+    overflow-x: auto; /* Horizontal scrolling if table is too wide */
+}
+
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border-spacing: 0; /* Clean table look */
+    border: 1px solid #ddd; /* Example: Add a basic border around the table */
+}
+
+.products-table th,
+.products-table td {
+    background-color: #f0f0f0;
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color); /* Row bottom border */
+    font-weight: bold;
+}
+
+.products-table th {
+    background-color: #f0f0f0; /* Header background */
+    font-weight: 600;
+    color: var(--text-color-dark);
+}
+
+.products-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Even row background */
+}
+
+.products-table tbody tr:hover {
+    background-color: #eaeaea; /* Hover background */
+}
+
+.products-table td:last-child {
+    text-align: center; /* Center align "Actions" column */
+}
+
+.products-table .button-primary,
+.products-table .button-secondary {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 0.9rem;
+    margin: 0 5px; /* Spacing between buttons */
+}
+
+.products-table .button-primary {
+    background-color: var(--primary-color); /* Primary color for Edit button */
+    color: white;
+}
+
+.products-table .button-primary:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+
+.products-table .button-secondary {
+    background-color: var(--secondary-color); /* Secondary color for Delete button */
+    color: white;
+}
+
+.products-table .button-secondary:hover {
+    background-color: darken(var(--secondary-color), 10%);
+}
+
+.product-thumbnail {
+    max-width: 50px; /* Adjust thumbnail size as needed */
+    max-height: 50px;
+    margin-right: 10px;
+    vertical-align: middle; /* Align image with text in cell */
+    border-radius: 4px; /* Optional: Rounded corners for thumbnails */
+}
+
+/* ProductsPage.css - Phase 34 - Add Product Form Styles */
+
+/* ... (previous ProductsPage.css styles) ... */
+
+.products-header {
+    display: flex;
+    justify-content: space-between; /* Space between heading and button */
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.products-header h2 {
+    margin-bottom: 0; /* Reset heading margin in header */
+}
+
+.add-product-section {
+    margin-top: 2rem; /* Spacing above the form section */
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.4rem;
+    background-color: var(--section-background);
+    box-shadow: 0 0 8px var(--box-shadow-color);
+}
+
+.add-product-section h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+}
+
+.add-product-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.add-product-form label {
+    display: block; /* Label on its own line */
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--text-color-dark);
+}
+
+.add-product-form input[type="text"],
+.add-product-form input[type="number"],
+.add-product-form input[type="url"],
+.add-product-form textarea,
+.add-product-form select { /* Style select dropdowns too if you add them later */
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border-radius: 0.3rem;
+    border: 1px solid var(--border-color);
+    font-size: 1rem;
+    background-color: var(--input-background); /* Use input background color */
+    color: var(--text-color-dark);
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.add-product-form textarea {
+    min-height: 100px; /* Minimum height for description textarea */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.add-product-form input:focus,
+.add-product-form textarea:focus,
+.add-product-form select:focus {
+    outline-color: var(--primary-color); /* Focus outline color */
+}
+
+
+.add-product-form .form-actions {
+    margin-top: 1.5rem;
+    text-align: right; /* Align buttons to the right */
+}
+
+.add-product-form .form-actions button {
+    margin-left: 1rem; /* Spacing between buttons in actions */
+}
+
+.add-product-form .form-actions button:first-child { /* Style for the first button (Add Product) */
+    margin-left: 0; /* No left margin for the first button */
+}
+
+/* ProductsPage.css - Phase 36 - Image Upload Styles */
+
+/* ... (previous ProductsPage.css styles) ... */
+
+.image-upload-group {
+    margin-bottom: 1.5rem;
+}
+
+.image-options {
+    display: flex;
+    gap: 1.5rem; /* Spacing between upload and URL options */
+    align-items: flex-start; /* Align items at the start */
+}
+
+.upload-option,
+.url-option {
+    flex: 1; /* Distribute available space equally */
+}
+
+.upload-label {
+    display: inline-block; /* Make label behave like a button */
+    padding: 0.7rem 1.2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.upload-label:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+
+.image-upload-input {
+    display: none; /* Hide the default file input visually, we trigger it via the label */
+}
+
+.use-url-checkbox {
+    margin-right: 0.5rem;
+}
+
+.image-url-input {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.7rem 1rem;
+    border-radius: 0.3rem;
+    border: 1px solid var(--border-color);
+    font-size: 1rem;
+    background-color: var(--input-background);
+    color: var(--text-color-dark);
+    box-sizing: border-box;
+}
+
+.uploading-message {
+    color: var(--primary-color);
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+/* frontend/src/pages/ProductsPage.css */
+/* ... (existing CSS) ... */
+
+.uploaded-file-name {
+    display: block; /* To make it appear on a new line, if needed */
+    margin-top: 5px; /* Add some space above the filename */
+    font-size: 0.9em; /* Make the filename text slightly smaller */
+    color: #555; /* Choose a color that fits your design */
+}
+
+/* ProductsPage.css - Phase 37 - Edit Product Form Styles */
+/* === EDIT PRODUCT FORM SECTION STYLES === */
+.edit-product-section {
+    margin-top: 2rem; /* Spacing above edit form section */
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.4rem;
+    background-color: var(--section-background);
+    box-shadow: 0 0 8px var(--box-shadow-color);
+}
+
+.edit-product-section h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+}
+
+.edit-product-form .form-actions {
+    margin-top: 1.5rem;
+    text-align: right;
+}
+
+.edit-product-form .form-actions button {
+    margin-left: 1rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end; /* Or space-between, etc., as needed */
+    align-items: center; /* Add align-items: center; to vertically align spinner with buttons */
+}
+
+/* frontend/src/pages/ProductsPage.css */
+/* ... (existing CSS) ... */
+
+.error-message {
+    color: #e74c3c; /* Red color for errors */
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+
+/* frontend/src/pages/ProductsPage.css */
+
+/* frontend/src/pages/ProductsPage.css */
+/* ... (existing CSS) ... */
+
+.empty-products {
+    padding: 50px 20px; /* Add some padding around the message */
+    text-align: center; /* Center the text */
+    color: #777; /* Grey color for a softer appearance */
+    border: 1px dashed #ccc; /* Optional: Add a dashed border to visually separate it */
+    border-radius: 5px;
+}
+
+.empty-products p {
+    margin-bottom: 10px; /* Space between the two paragraphs */
+}
+
+/* ... (existing CSS) ... */
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0; /* Add some padding around */
+}
+
+.loading-container p {
+    margin-top: 10px; /* Space between spinner and text */
+    color: #777; /* Optional: Grey loading text */
+}
+
+/* Style for "No products found" message */
+.products-table-container p {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+    padding: 15px;
+}
+
+/* Responsive table (optional - adjust as needed) */
+@media (max-width: 768px) {
+    .products-table {
+        font-size: 0.9rem;
+    }
+    .products-table th,
+    .products-table td {
+        padding: 8px 10px;
+    }
+}

@@ -1,0 +1,537 @@
+/* LandingPage.css - UPDATED Checkout Area Styles - Replaces previous Checkout Area CSS */
+
+/* --- Checkout Area Container (aside.checkout-area) - UPDATED --- */
+.checkout-area {
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-large);
+  margin: 3rem auto;
+  border-left: 1px solid var(--border-light-grey);
+  border-top: 1px solid var(--border-light-grey);
+  overflow: hidden;
+  box-sizing: border-box;
+  max-width: 80%;
+  width: 80%;
+  background-color: var(--background-lighter);
+  border-radius: var(--border-radius-medium);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  font-family: var(--font-family-body);
+  color: var(--text-color-dark);
+  align-items: stretch;
+}
+
+.checkout-area h2 { /* "Checkout" Heading - UPDATED */
+  font-size: 2.2rem; /* Slightly larger */
+  font-weight: 700;
+  color: var(--primary-color);
+  text-align: left;
+  margin-bottom: 1.2rem; /* Reduced bottom margin */
+  border-bottom: 3px solid var(--accent-color);
+  padding-bottom: 0.5rem; /* Reduced padding-bottom */
+}
+
+.checkout-area > p { /* "Your cart is empty" message - UPDATED */
+  font-style: italic;
+  color: var(--text-color-light);
+  margin-top: 1rem; /* Reduced top margin */
+  text-align: center;
+}
+
+/* --- Cart Items Section - UPDATED --- */
+.checkout-area h3 { /* Section Headings ("Cart Items:", etc.) - UPDATED */
+  font-size: 1.6rem; /* Slightly larger */
+  font-weight: 600;
+  color: var(--text-color-dark);
+  margin-bottom: 1.2rem; /* Reduced bottom margin */
+  margin-top: 2rem;    /* Increased top margin for separation */
+  text-align: left;
+}
+
+.checkout-area > div > ul { /* Cart items list container - UPDATED */
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px; /* Reduced bottom margin */
+}
+
+/* LandingPage.css - UPDATED Cart Item Layout CSS - Version 2 */
+
+.cart-item { /* Cart item list item - UPDATED LAYOUT - Version 2 */
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  margin-bottom: 8px;
+  background-color: var(--background-light);
+  border-radius: var(--border-radius-medium);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  justify-content: space-between; /* Distribute space */
+}
+
+.cart-item-image { /* Cart item image container - No Change Needed */
+  margin-right: 15px;
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: var(--border-radius-small);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+}
+
+.cart-item-details { /* Cart item details - UPDATED - No longer flex column */
+  flex-grow: 1;
+  margin-right: 10px;
+  display: flex;          /* Make details a flex container */
+  flex-direction: column; /* Stack price, quantity - kept for price and quantity stacking */
+  justify-content: center; /* Center content vertically in details */
+}
+
+.cart-item-price { /* Cart item price - No Change Needed */
+  font-size: 0.9em;
+  color: var(--accent-color);
+  margin-bottom: 3px;
+}
+
+.cart-item-quantity { /* Cart item quantity - UPDATED with label via CSS */
+  font-size: 0.9em;
+  color: var(--text-color-light);
+  margin-bottom: 3px;
+  display: flex;        /* Make quantity a flex container for label */
+  align-items: center;   /* Vertically align label and value */
+}
+
+/* Add "Quantity:" label using CSS ::before pseudo-element */
+.cart-item-quantity::before {
+  content: "Quantity:";
+  margin-right: 5px;    /* Space between label and value */
+  font-weight: 500;    /* Make label slightly bolder */
+  color: var(--text-color-dark); /* Darker label color */
+}
+
+
+.cart-item-subtotal { /* Cart item subtotal (moved outside details) - UPDATED POSITIONING */
+  font-weight: bold;
+  font-size: 1em;
+  color: var(--primary-color);
+  margin-left: 15px;     /* Add left margin to separate from details */
+  flex-shrink: 0;         /* Prevent shrinking */
+  width: auto;           /* Adjust width to content */
+  text-align: right;      /* Align text to right within its area */
+}
+
+.cart-item-quantity-controls { /* Quantity controls container - No Change Needed */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-left: 15px;     /* Add left margin to separate from subtotal */
+}
+
+.cart-item-quantity-controls button, /* Quantity control buttons - No Change Needed */
+.cart-item-quantity-controls .quantity-input {
+  padding: 7px 10px;
+  font-size: 1em;
+  border-radius: var(--border-radius-small);
+  border: 1px solid var(--border-color);
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.cart-item-quantity-controls button { /* Quantity control buttons - No Change Needed */
+  background-color: var(--background-light);
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.cart-item-quantity-controls button:hover { /* Quantity control buttons - No Change Needed */
+  background-color: var(--primary-color);
+  color: var(--background-light);
+  border-color: var(--primary-color);
+}
+
+.cart-item-quantity-controls .quantity-input { /* Quantity input field - No Change Needed */
+  max-width: 80px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+
+/* --- Shipping Options Section - UPDATED --- */
+.shipping-options {
+  margin-top: 20px; /* Reduced top margin */
+  margin-bottom: 15px; /* Reduced bottom margin */
+}
+
+.shipping-options-list { /* Shipping options list - UPDATED */
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px; /* Reduced indent */
+}
+
+.shipping-option-item { /* Shipping option item - UPDATED */
+  margin-bottom: 8px; /* Reduced bottom margin */
+  display: flex;
+  align-items: center;
+}
+
+.shipping-option-item input[type="radio"] { /* Shipping radio button - UPDATED */
+  margin-right: 8px;
+  transform: scale(1); /* Reverted to normal size */
+  cursor: pointer;
+}
+
+.shipping-options label { /* Shipping option label - UPDATED */
+  font-weight: 500;
+  color: var(--text-color-dark);
+  cursor: pointer;
+  font-size: 0.95em; /* Slightly smaller label font */
+}
+
+
+/* --- Cart Total Display - UPDATED --- */
+.cart-total {
+  margin-top: 20px; /* Reduced top margin */
+  padding-top: 10px;
+  border-top: 2px solid var(--accent-color);
+  text-align: right;
+  font-size: 1.2em; /* Slightly smaller total font */
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+
+/* --- Billing Details Form - UPDATED --- */
+.billing-form-wrapper {
+  border: 1px solid var(--border-color); /* Reduced border thickness */
+  padding: 20px;      /* Reduced padding */
+  border-radius: var(--border-radius-medium);
+  background-color: var(--background-light);
+  margin-bottom: 20px; /* Reduced bottom margin */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08); /* Reduced shadow */
+  max-width: 100%;
+}
+
+.billing-details-form h3 { /* "Billing Details" heading - UPDATED */
+  font-size: 1.6rem; /* Slightly smaller */
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 15px; /* Reduced bottom margin */
+  text-align: left;
+}
+
+.billing-details-form .form-group { /* Form group - UPDATED */
+  margin-bottom: 15px; /* Reduced bottom margin */
+}
+
+.billing-details-form label { /* Form label - UPDATED */
+  display: block;
+  margin-bottom: 6px;  /* Reduced bottom margin */
+  font-weight: 500;  /* Slightly less bold */
+  color: var(--text-color-dark);
+  font-size: 0.95em; /* Smaller label font */
+}
+
+
+.billing-details-form input[type="text"], /* Form inputs and textarea - UPDATED */
+.billing-details-form input[type="email"],
+.billing-details-form input[type="tel"],
+.billing-details-form input[type="number"],
+.billing-details-form textarea {
+  width: 100%;
+  padding: 10px;     /* Reduced padding */
+  border: 1px solid var(--border-color); /* Reduced border thickness */
+  border-radius: var(--border-radius-small);
+  font-size: 0.95em; /* Smaller input font */
+  box-sizing: border-box;
+  background-color: var(--background-lighter);
+  color: var(--text-color-dark);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.billing-details-form input[type="text"]:focus, /* Form inputs focus - UPDATED */
+.billing-details-form input[type="email"]:focus,
+.billing-details-form input[type="tel"]:focus,
+.billing-details-form input[type="number"]:focus,
+.billing-details-form textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); /* Reduced focus shadow */
+}
+
+
+.billing-details-form textarea {
+  resize: vertical;
+  min-height: 100px; /* Reduced textarea height */
+}
+
+.billing-details-form button[type="submit"] { /* Form submit button - UPDATED - likely not used here */
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-small);
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s ease;
+  font-weight: 500; /* Slightly less bold */
+  margin-top: 10px; /* Reduced top margin */
+}
+
+.billing-details-form button[type="submit"]:hover {
+  background-color: color-mix(in srgb, var(--primary-color) 80%, black);
+}
+
+
+/* --- Place Order Section (Buttons) - UPDATED --- */
+.place-order-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 10px;         /* Reduced gap */
+  margin-top: 2.5rem; /* Reduced top margin */
+  margin-bottom: 3rem;
+}
+
+.place-order-button, /* Place order buttons - UPDATED */
+.pay-online-now-button {
+  padding: 15px 30px;   /* Reduced padding */
+  font-size: 1.1em;   /* Slightly smaller font */
+  font-weight: 600;
+  border: none;
+  border-radius: var(--border-radius-large);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.15s ease; /* Reduced transition and shadow */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Reduced shadow */
+  text-align: center;
+  min-width: 200px;
+}
+
+.place-order-button {
+  background-color: var(--accent-color);
+  color: var(--background-light);
+}
+
+.pay-online-now-button {
+  background-color: var(--primary-color);
+  color: var(--background-light);
+}
+
+.place-order-button:hover,
+.pay-online-now-button:hover {
+  transform: translateY(-3px); /* Reduced hover lift */
+  background-color: color-mix(in srgb, var(--primary-color) 70%, black);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2); /* Reduced hover shadow */
+}
+
+.place-order-button:active,
+.pay-online-now-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Reduced active shadow */
+}
+
+.place-order-button:disabled,
+.pay-online-now-button:disabled {
+  background-color: #cccccc;
+  color: #666;
+  cursor: default;
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+
+/* --- Modal Overlay and Content Styles - No significant updates, keeping previous styles should be fine --- */
+/* (Modal styles from previous response - these likely do not need major changes unless you see specific issues) */
+.modal-overlay.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content.show {
+  background-color: var(--background-light);
+  padding: 25px; /* Slightly reduced padding */
+  border-radius: var(--border-radius-large);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Reduced shadow */
+  max-width: 550px; /* Slightly smaller max width */
+  width: 95%;
+  font-family: var(--font-family-body);
+  color: var(--text-color-dark);
+  position: relative;
+}
+
+
+.modal-close {
+  position: absolute;
+  top: 8px;      /* Slightly adjusted position */
+  right: 12px;    /* Slightly adjusted position */
+  font-size: 1.6em; /* Slightly smaller close button */
+  font-weight: bold;
+  color: var(--text-color-light);
+  cursor: pointer;
+  opacity: 0.7;    /* Slightly more transparent by default */
+  transition: opacity 0.2s ease;
+}
+
+.modal-close:hover {
+  opacity: 0.9; /* Slightly less opaque on hover */
+  color: var(--text-color-dark);
+}
+
+.modal-content.show button {
+  padding: 10px 20px;  /* Reduced padding */
+  font-size: 1em;    /* Smaller font size */
+  border-radius: var(--border-radius-medium);
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--background-light);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 15px;  /* Reduced top margin */
+  font-weight: 500;  /* Slightly less bold */
+}
+
+.modal-content.show button:hover {
+  background-color: color-mix(in srgb, var(--primary-color) 80%, black);
+}
+
+
+/* --- Media Queries for Checkout Area Responsiveness - UPDATED - Minor adjustments for smaller sizes --- */
+
+@media (max-width: 1000px) { /* Tablet size */
+  .checkout-area {
+      max-width: 95%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: var(--padding-medium);
+  }
+
+  .cart-item {
+      padding: 10px 15px; /* Further reduced padding on tablet */
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .cart-item-image {
+      margin-right: 0;
+      margin-bottom: 12px; /* Reduced margin in stacked layout on tablet */
+      width: 100%;
+      max-width: 130px; /* Slightly smaller max width on tablet */
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .cart-item-details {
+      margin-right: 0;
+      margin-bottom: 8px; /* Reduced margin below details on tablet */
+      text-align: center;
+  }
+
+  .cart-item-subtotal {
+      margin-left: 0;
+      text-align: center;
+      margin-top: 12px; /* Reduced margin above subtotal on tablet */
+  }
+
+  .cart-item-quantity-controls {
+      justify-content: center;
+  }
+
+  .billing-form-wrapper {
+      padding: 15px; /* Further reduced padding on tablet */
+  }
+
+  .billing-details-form h3 {
+      text-align: center;
+      font-size: 1.5rem; /* Slightly smaller form heading on tablet */
+  }
+}
+
+
+@media (max-width: 600px) { /* Mobile screens */
+  .checkout-area {
+      padding: var(--padding-small);
+      border-left: none;
+      border-top: 1px solid var(--border-light-grey);
+      margin-top: 1.5rem; /* Further reduced top margin on mobile */
+      margin-bottom: 2.5rem;/* Further reduced bottom margin on mobile */
+      border-radius: 0;
+      box-shadow: none;
+      max-width: 100%;
+  }
+
+  .checkout-area h2 {
+      font-size: 1.9rem; /* Slightly smaller checkout heading on mobile */
+      text-align: center;
+  }
+
+  .cart-item-image {
+      max-width: 100px; /* Further reduced max width on mobile */
+      max-height: 100px;
+  }
+
+  .cart-item-quantity-controls button,
+  .cart-item-quantity-controls .quantity-input {
+      padding: 6px 9px;   /* Even smaller buttons and input on mobile */
+      font-size: 0.85em; /* Even smaller font on mobile */
+  }
+
+  .billing-form-wrapper {
+      padding: 12px;     /* Further reduced form padding on mobile */
+  }
+
+  .billing-details-form h3 {
+      font-size: 1.4rem; /* Even smaller form heading on mobile */
+  }
+
+  .billing-details-form .form-group {
+      margin-bottom: 12px; /* Further reduced form group margin on mobile */
+  }
+
+  .billing-details-form label {
+      font-size: 0.9em;   /* Even smaller labels on mobile */
+  }
+
+  .billing-details-form input[type="text"],
+  .billing-details-form input[type="email"],
+  .billing-details-form input[type="tel"],
+  .billing-details-form input[type="number"],
+  .billing-details-form textarea {
+      padding: 9px;      /* Even smaller input padding on mobile */
+      font-size: 0.9em;   /* Even smaller input font on mobile */
+  }
+
+  .place-order-section {
+      margin-top: 1.8rem; /* Further reduced button section margin on mobile */
+      margin-bottom: 2.2rem;/* Further reduced button section margin on mobile */
+  }
+
+  .place-order-button,
+  .pay-online-now-button {
+      padding: 12px 25px;  /* Even smaller buttons on mobile */
+      font-size: 1em;    /* Even smaller button font on mobile */
+      min-width: 0;
+      width: 100%;
+  }
+
+  .modal-content.show {
+      padding: 18px;     /* Further reduced modal padding on mobile */
+  }
+
+  .modal-close {
+      font-size: 1.4em; /* Even smaller close button on mobile */
+      top: 6px;
+      right: 8px;
+  }
+}

@@ -1,0 +1,414 @@
+/* src/components/LandingPage/LandingPage.css - Revised for Responsiveness and Correctness */
+
+/* NOTE: Global styles for body, headings (h1, h2, h3), and CSS variables are assumed to be in src/index.css */
+
+/* --- "Bold and Colorful" Main Product Display Area --- */
+.main-product-display-area.bold-style {
+  width: 100%;
+  height: auto;
+  min-height: 600px; /* Minimum height to ensure visibility */
+  background-color: #e0f7fa;
+  padding-top: calc(var(--padding-large) * 2);
+  padding-bottom: calc(var(--padding-large) * 2);
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.main-product-display-area.bold-style::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(135deg, #b2ebf2 0%, #80deea 100%);
+  transform: skewY(-5deg);
+  transform-origin: top left;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+.main-product-display-area.bold-style > * {
+  position: relative;
+  z-index: 1;
+}
+
+.main-product-display-area.bold-style h2 {
+  font-size: 2.5rem;
+  margin-bottom: var(--margin-small);
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.main-product-card.bold-style {
+  max-width: 750px; /* max-width for larger screens */
+  width: 95%;       /* Width on smaller screens, inside container padding */
+  margin: 0 auto var(--margin-large);
+  background-color: var(--background-light);
+  padding: var(--padding-large);
+  border-radius: var(--border-radius-large);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+}
+
+.main-product-card.bold-style:hover {
+  transform: scale(1.02);
+}
+
+.main-product-card.bold-style img {
+  width: 85%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 5px;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.main-product-card.bold-style:hover img {
+  transform: scale(1.05);
+}
+
+.main-product-card.bold-style h3 {
+  font-size: 2em;
+  margin-bottom: 12px;
+  color: #333;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.main-product-card.bold-style .benefit-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.main-product-card.bold-style .benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 25px;
+  background-color: #f0f0f0;
+  color: #444;
+  font-size: 0.95em;
+}
+
+.main-product-card.bold-style .benefit-item i {
+  font-size: 1.3em;
+  color: #ffc107;
+}
+
+.main-product-card.bold-style p {
+  font-size: 1.1em;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.main-product-card.bold-style .add-to-cart-button {
+  padding: 18px 35px;
+  font-size: 1.3em;
+  border-radius: 12px;
+  background-color: var(--accent-color);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer; /* Added cursor: pointer for button */
+}
+
+.main-product-card.bold-style .add-to-cart-button:hover {
+  background-color: #ff9800;
+  transform: scale(1.08);
+}
+
+.main-product-card.bold-style .add-to-cart-button:active {
+  transform: scale(1.0);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Landing Page Container & Product Display --- */
+.landing-page-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--padding-medium); /* Use CSS variable for padding */
+  flex-direction: column;
+  box-sizing: border-box;
+  max-width: 1920px; /* Maximum width to prevent content from stretching too wide on very large screens */
+  display: flex; /* Added display: flex to ensure it behaves as a flex container */
+  align-items: stretch; /* Stretch items to container width */
+}
+
+.product-display-area {
+  display: flex;
+  justify-content: center; /* Center products horizontally */
+  padding: var(--padding-medium); /* Use CSS variable for padding */
+  box-sizing: border-box;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  width: 100%; /* Take full width of product-display-area */
+  max-width: 1200px; /* Limit grid width on larger screens for better readability */
+  box-sizing: border-box;
+}
+
+.product-card {
+  background-color: #fefefe;
+  border: 1px solid var(--border-light-grey); /* Use CSS variable for border */
+  padding: 1rem;
+  border-radius: var(--border-radius-medium); /* Use CSS variable for radius */
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto; /* Height auto for aspect ratio */
+  max-height: 200px; /* Limit image height */
+  object-fit: cover;
+  display: block;
+  margin-bottom: 10px;
+  border-radius: var(--border-radius-small); /* Optional: Rounded corners for images */
+}
+
+
+.add-to-cart-button { /* Re-using add-to-cart-button styles here for consistency */
+  padding: var(--padding-medium) var(--padding-large);
+  font-size: 1em; /* Adjusted to 1em for consistency with other buttons */
+  background-color: var(--accent-color); /* Use accent color */
+  color: var(--text-color-dark);      /* Dark text color */
+  padding: 10px 20px; /* Redundant line, padding already set above with variables */
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--border-radius-medium); /* Added border-radius */
+}
+
+.add-to-cart-button:hover {
+  background-color: color-mix(in srgb, var(--accent-color) 80%, black); /* Darken hover */
+}
+
+
+/* --- Product Display Area Heading --- */
+.product-display-area h2 {
+  font-size: 2em;
+  margin-top: 1rem;
+  text-align: center; /* Center "Our Products" heading */
+  margin-bottom: var(--margin-medium); /* Add margin below heading */
+}
+
+
+/* --- Footer Styles --- */
+footer {
+  background-color: var(--neutral-dark-grey); /* Use CSS variable for color */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.social-media-icons {
+  margin-top: 10px;
+}
+
+.social-media-icons a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 1.2em;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.social-media-icons a:hover {
+  color: var(--primary-color); /* Use CSS variable for color */
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Tablet and smaller screens - max-width: 1200px */
+@media (max-width: 1200px) {
+  .landing-page-container {
+      flex-direction: column; /* Stack sections vertically */
+      padding: var(--padding-small); /* Reduce container padding */
+  }
+
+  .product-display-area {
+      flex: 1;
+      padding-right: 0;
+      margin-bottom: 20px;
+      width: 100%;
+  }
+
+  .checkout-area {
+      flex: 1;
+      padding-left: 0;
+      border-left: none; /* Remove left border on smaller screens */
+      border-top: 1px solid var(--border-light-grey); /* Keep top border */
+      padding-top: 20px;
+      width: 95%; /* Slightly wider on smaller screens, with percentage width */
+      max-width: none; /* Remove max-width restriction to fill container */
+      margin-left: auto;  /* Keep centering by setting left/right to auto */
+      margin-right: auto;
+  }
+
+  .main-product-display-area.bold-style {
+      padding-left: 5%;
+      padding-right: 5%;
+  }
+  .product-display-area h2 { /* Center "Our Products" heading in tablet view */
+      text-align: center;
+  }
+}
+
+
+/* Mobile screens - max-width: 768px */
+@media (max-width: 768px) {
+  .products-grid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust grid for smaller columns */
+      gap: 15px; /* Reduce gap between grid items */
+  }
+
+  .product-card {
+      padding: 0.8rem; /* Reduce padding inside product cards */
+  }
+
+  .product-card img {
+      height: auto;    /* Height auto for aspect ratio */
+      max-height: 150px; /* Further limit image height on mobile */
+  }
+
+
+  .cart-item {
+      flex-direction: column; /* Stack cart item details vertically */
+      align-items: stretch;   /* Stretch items to full width */
+      padding: 10px;        /* Add padding around cart items */
+  }
+
+  .cart-item-image {
+      margin-right: 0;     /* Remove right margin for stacked layout */
+      margin-bottom: 10px;  /* Add bottom margin */
+      width: 100%;        /* Make image full width in stacked layout */
+      max-width: 150px;    /* Limit max width for very small screens if needed */
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;    /* Center image horizontally in stacked layout */
+  }
+
+  .cart-item-quantity-controls {
+      margin-left: 0;      /* Remove left margin */
+      margin-top: 10px;    /* Add top margin */
+      justify-content: center; /* Center quantity controls */
+  }
+
+  .cart-total {
+      text-align: center;  /* Center cart total on mobile */
+      margin-top: 20px;   /* Increase margin above total */
+  }
+
+  .billing-details-form .form-group {
+      margin-bottom: 10px; /* Reduce margin between form groups */
+  }
+
+  .place-order-button,
+  .pay-online-now-button,
+  .add-to-cart-button {
+      font-size: 1em; /* Slightly reduce button font size on mobile */
+      padding: var(--padding-medium) var(--padding-large); /* Use CSS variables for button padding */
+      min-width: 0;     /* Remove min-width on mobile to allow buttons to shrink */
+      width: 100%;       /* Make buttons full width on mobile */
+      box-sizing: border-box; /* Ensure width includes padding and border */
+  }
+
+  .main-product-display-area.bold-style h2 {
+      font-size: 2em; /* Slightly smaller main heading on mobile */
+  }
+}
+
+
+/* Extra small mobile screens - max-width: 500px */
+@media (max-width: 500px) {
+  .main-product-display-area.bold-style {
+      padding-left: 2%;
+      padding-right: 2%; /* Even less horizontal padding on very small screens */
+  }
+  .product-card img {
+      max-height: 120px; /* Further limit image height on very small mobile */
+  }
+  .products-grid {
+      grid-template-columns: 1fr; /* Stack product cards to single column */
+      gap: 15px;
+  }
+  .checkout-area {
+      padding: var(--padding-medium); /* Reduce checkout padding on very small screens */
+      margin-left: var(--margin-small); /* Add some horizontal margin on very small screens */
+      margin-right: var(--margin-small);
+      width: auto; /* Allow checkout area to take up available width with margins */
+      max-width: none; /* Ensure no max-width restriction */
+      border-left: none; /* Remove border on small screens */
+      border-top: 1px solid var(--border-light-grey);
+  }
+}
+
+/* Small height viewports - max-height: 700px (Example, adjust as needed) */
+@media (max-height: 700px) {
+  .main-product-display-area.bold-style h2 {
+      font-size: 2em;
+      margin-bottom: 15px;
+  }
+
+  .main-product-card.bold-style img {
+      max-height: 200px; /* Reduce image max-height for smaller height screens */
+      margin-bottom: 10px;
+  }
+
+  .main-product-card.bold-style h3 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+  }
+
+  .main-product-card.bold-style p {
+      font-size: 1em;
+      margin-bottom: 20px; /* Reduce paragraph margin */
+  }
+
+  .main-product-card.bold-style .add-to-cart-button {
+      padding: 12px 24px; /* Reduce button padding */
+      font-size: 1em;    /* Reduce button font size */
+  }
+}

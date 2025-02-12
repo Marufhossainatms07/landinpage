@@ -1,0 +1,106 @@
+/* frontend/src/pages/OrderDetailsPage.css */
+.order-details-container {
+    max-width: 900px; /* Slightly wider container */
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--section-background); /* Use admin panel section background color */
+    border: 1px solid var(--border-color); /* Use admin panel border color */
+    border-radius: 0.5rem;
+    box-shadow: 0 0 12px var(--box-shadow-color); /* Use admin panel shadow color */
+}
+
+.order-details-container h1 {
+    color: var(--text-color-dark);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.order-details-container h2 {
+    color: var(--primary-color); /* Example: Use primary color for order ID heading */
+    margin-bottom: 1.5rem;
+}
+
+.order-details-container p {
+    color: var(--text-color-light);
+    line-height: 1.6;
+}
+
+/* OrderDetailsPage.css - Phase 30 - Detail Section Styles */
+
+/* ... (previous OrderDetailsPage.css styles) ... */
+
+.detail-section {
+    margin-bottom: 2rem; /* Spacing between sections */
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.4rem;
+    background-color: var(--section-background);
+    box-shadow: 0 0 8px var(--box-shadow-color);
+}
+
+.detail-section h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+}
+
+.detail-section p {
+    margin-bottom: 0.7rem;
+}
+
+.order-item {
+    margin-bottom: 1.5rem; /* Spacing between order items */
+    padding-bottom: 1.5rem;
+    border-bottom: 1px dashed var(--border-color); /* Dashed line to separate items */
+}
+
+.order-item:last-child {
+    border-bottom: none; /* No border for the last item */
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.error-message {
+    color: #dc3545; /* Red color for error messages */
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+/* OrderDetailsPage.css - Phase 31 - Status Control Styles */
+
+.status-change-control {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.status-change-control label {
+    margin-right: 1rem;
+    font-weight: bold;
+    color: var(--text-color-dark);
+}
+
+.status-change-control select {
+    padding: 0.6rem 1rem;
+    border-radius: 0.3rem;
+    border: 1px solid var(--border-color);
+    font-size: 1rem;
+    background-color: var(--section-background);
+    color: var(--text-color-dark);
+    appearance: none; /* Remove default browser styling for dropdown arrow */
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'); /* Custom dropdown arrow */
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 0.5rem);
+    background-position-y: 50%;
+    background-size: 1rem;
+    padding-right: 2rem; /* Make space for arrow */
+}
+
+.status-change-control select:focus {
+    outline-color: var(--primary-color); /* Focus outline color */
+}

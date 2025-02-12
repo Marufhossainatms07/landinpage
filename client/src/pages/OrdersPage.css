@@ -1,0 +1,26 @@
+/* frontend/src/pages/OrdersPage.css */
+.orders-page-container {
+    padding: 20px;
+}
+
+.admin-section.orders-section {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.empty-orders {
+    padding: 20px;
+    text-align: center;
+    font-style: italic;
+    color: #777;
+    border: 1px dashed #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-top: 20px; /* Add some margin above the empty state message */
+}
+
+.empty-orders p {
+    margin-bottom: 10px; /* Add spacing between paragraphs in empty state */
+}

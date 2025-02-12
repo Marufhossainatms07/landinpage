@@ -1,0 +1,76 @@
+/* src/components/LandingPage/WhatsAppButton.css */
+
+.whatsapp-button-container {
+  position: fixed; /* Floating button */
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; /* Ensure it's on top of other content */
+}
+
+.whatsapp-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50px; /* Circular button */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.whatsapp-icon {
+  width: 55px;
+  height: 55px;
+  margin-right: 8px; /* Space between icon and text if you add text */
+  background-size: contain; /* Keep the icon proportional */
+  background-repeat: no-repeat; /* No background image repetition */
+  background-position: center; /* Center the icon */
+  transition: background-color 0.2s ease; /* Smooth transition */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+/* Styles for hover and active states */
+
+.whatsapp-icon:hover {
+  transform: scale(1.1); /* Increase size on hover */
+  transition: transform 0.2s ease; /* Smooth transition */
+}
+
+
+
+.whatsapp-tooltip {
+  position: absolute; /* Position relative to the container */
+  /* bottom: 100%;  --- REMOVE or COMMENT OUT bottom: 100% --- */
+  top: 50%;        /* Vertically center tooltip */
+  right: 100%;      /* Position to the LEFT of the button container */
+  transform: translateY(-50%) translateX(0px); /* Vertically center, no horizontal shift initially */
+  margin-right: 10px; /* Space between button and tooltip (now margin-right because it's on the left) */
+  background-color: #075e54; /* Dark background for tooltip */
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  white-space: nowrap;
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  transform: translateX(-10px) translateY(-50%); /* Start slightly moved to the left */
+}
+
+.whatsapp-button-container:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0px) translateY(-50%); /* Move to final position on hover (no horizontal shift) */
+}
+
+.whatsapp-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 50%;           /* Vertically center arrow */
+  left: 100%;         /* Position arrow to the RIGHT edge of the tooltip */
+  margin-top: -5px;   /* Vertically adjust arrow position */
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent #075e54; /* Arrow points to the LEFT */
+}

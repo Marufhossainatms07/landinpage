@@ -1,0 +1,176 @@
+/* src/components/Navbar.css */
+
+.navbar {
+  background-color: #fff; /* Light background for navbar */
+  color: #333; /* Dark text color */
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center; /* Logo on left, navigation on right */
+  align-items: center;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); /* Subtle border-bottom shadow */
+  position: relative; /* For sticky positioning context */
+  z-index: 1000;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  transition: background-color 0.3s ease, padding 0.3s ease; /* Smooth transition for background and padding */
+}
+
+.navbar.sticky {
+  position: fixed; /* Fixed positioning when sticky */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f0; /* Slightly different background when sticky */
+  padding: 10px 20px; /* Slightly reduced padding when sticky */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* More prominent shadow when sticky */
+}
+
+.navbar.sticky .navbar-logo { /* Style navbar-logo when navbar is sticky */
+  background-color: rgba(200, 200, 200, 0.2); /* Subtle background highlight for logo when sticky */
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  transition: padding 0.3s ease, background-color 0.3s ease; /* Smooth transitions for logo styles */
+}
+
+.navbar-logo img {
+  height: 50px; /* Adjust logo image height */
+  margin-right: 15px;
+  vertical-align: middle;
+  transition: height 0.3s ease;
+}
+
+.navbar-logo a {
+  font-size: 1.8em; /* Adjust logo font size */
+  font-weight: bold;
+  color: inherit; /* Inherit text color from navbar */
+  text-decoration: none;
+  transition: font-size 0.3s ease;
+}
+
+/* Navigation Links (if you add them later) - Example styles */
+.navbar-nav {
+  /* Styles for navigation links container (if needed) */
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li {
+  margin-left: 20px; /* Spacing between nav links */
+}
+
+.nav-links li:first-child {
+  margin-left: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #555; /* Gray color for links */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #007bff; /* Blue color on hover */
+}
+
+
+/* --- Media Queries for Responsiveness --- */
+
+@media (max-width: 1200px) {
+  .navbar-logo img {
+      height: 45px; /* Slightly smaller logo on medium screens */
+  }
+  .navbar-logo a {
+      font-size: 1.6em;
+  }
+  .nav-links li {
+      margin-left: 15px;
+  }
+}
+
+@media (max-width: 768px) { /* Tablet and smaller screens */
+  .navbar {
+      flex-direction: column;
+      align-items: stretch; /* Stretch items to full width */
+      padding: 10px 15px; /* Adjust padding for smaller screens */
+  }
+
+  .navbar-logo {
+      margin-bottom: 10px; /* Add space below logo in vertical layout */
+      text-align: center; /* Center logo on small screens */
+      flex-direction: column; /* Stack logo image and text vertically */
+  }
+  .navbar-logo img {
+      margin-right: 0; /* Remove right margin in vertical layout */
+      margin-bottom: 5px; /* Add margin below image */
+      height: 60px; /* Slightly larger logo image in vertical layout */
+  }
+
+  .navbar-logo a {
+      font-size: 2em; /* Slightly larger logo text in vertical layout */
+  }
+
+  .navbar.sticky {
+      padding: 8px 15px; /* Adjust sticky padding on smaller screens */
+  }
+  .navbar.sticky .navbar-logo {
+      padding: 6px 10px; /* Adjust sticky logo padding on smaller screens */
+  }
+
+  .navbar-nav {
+      width: 100%; /* Nav links take full width */
+  }
+  .nav-links {
+      flex-direction: column; /* Stack navigation links vertically */
+      width: 100%;
+      text-align: center; /* Center align links in vertical layout */
+  }
+  .nav-links li {
+      margin-left: 0;
+      margin-bottom: 8px; /* Spacing between vertical links */
+      width: 100%; /* Each link takes full width */
+  }
+  .nav-links li:last-child {
+      margin-bottom: 0;
+  }
+  .nav-links a {
+      display: block; /* Make links block level for full width click area */
+      padding: 10px 15px;
+      border-bottom: 1px solid #eee; /* Separator for vertical links */
+  }
+  .nav-links li:last-child a {
+      border-bottom: none; /* No border for last link */
+  }
+}
+
+@media (max-width: 500px) { /* Even smaller screens (phones) */
+  .navbar-logo img {
+      height: 40px; /* Further reduce logo size on very small screens */
+  }
+  .navbar-logo a {
+      font-size: 1.4em; /* Further reduce logo text size */
+  }
+  .navbar {
+      padding: 10px 10px; /* Even less padding on very small screens */
+  }
+  .navbar.sticky {
+      padding: 6px 10px; /* Even less sticky padding */
+  }
+  .nav-links a {
+      font-size: 0.95em; /* Smaller link font size on very small screens */
+      padding: 8px 12px; /* Smaller link padding */
+  }
+}
